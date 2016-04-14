@@ -8,7 +8,11 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.create(params_check)
-    redirect_to @idea
+    if @idea.save
+      redirect_to @idea
+    else
+      render :new
+    end
   end
 
   def show
