@@ -8,12 +8,16 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.create(params_check)
-    redirect_to @idea 
+    redirect_to @idea
+  end
+
+  def show
+    @idea = Idea.find(params[:id])
   end
 
   private
 
   def params_check
-    params.permit(:idea).require(:title, :description)
+    params.require(:idea).permit(:title, :description)
   end
 end
