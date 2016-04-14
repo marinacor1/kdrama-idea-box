@@ -21,5 +21,21 @@ feature "user can submit kdrama idea" do
     end
   end
 
-  scenario "user cannot create "
+  scenario "user cannot create without title" do
+    pitch_title = "Muderous Rampage Meets Love"
+    pitch_description = "Lee MinHo falls in love with Anahi in the midst of a Zombie Apocalypse. Mexican and Korean love at first sight."
+    visit ideas_path
+    click_on "I have a bombass idea for the latest blockbuster"
+
+    expect new_idea_path
+    # select category, from: "title"
+    # fill_in "Title", with: pitch_title
+    fill_in "Description", with: pitch_description
+
+    #TODO select image from box
+    click_on "Submit"
+    expect new_idea_path
+    expect(page).to_not have_content pitch_title
+    expect(page).to_not have_content pitch_description
+  end
 end
