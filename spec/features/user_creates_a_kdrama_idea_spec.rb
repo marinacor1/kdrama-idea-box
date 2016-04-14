@@ -19,13 +19,14 @@ RSpec.feature "user can submit kdrama idea" do
     click_on "I have a bombass idea for the latest blockbuster"
 
     expect new_idea_path
-    select category, from: "title"
-    fill_in "title", with: pitch_title
-    fill_in "description", with: pitch_description
+    # select category, from: "title"
+    fill_in "Title", with: pitch_title
+    fill_in "Description", with: pitch_description
+
     #TODO select image from box
     click_on "Submit"
 
-    within("li:first") do 
+    within("li:first") do
       expect(page).to have_content pitch_title
       expect(page).to have_content pitch_description
     end
