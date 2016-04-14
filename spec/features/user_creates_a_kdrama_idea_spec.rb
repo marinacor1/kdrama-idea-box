@@ -32,6 +32,9 @@ feature "user can submit kdrama idea" do
 
     #TODO select image from box
     click_on "Submit"
+
+    expect(page).to have_content "Title can't be blank"
+
     expect new_idea_path
     expect(page).to_not have_content pitch_description
   end
@@ -47,6 +50,8 @@ feature "user can submit kdrama idea" do
     fill_in "Title", with: pitch_title
     #TODO select image from box
     click_on "Submit"
+
+    expect(page).to have_content "Description can't be blank"
 
     expect new_idea_path
 
