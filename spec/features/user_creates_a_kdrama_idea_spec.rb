@@ -15,7 +15,6 @@ RSpec.feature "user can submit kdrama idea" do
 
     #TODO select image from box
     click_on "Submit"
-
     within("li:first") do
       expect(page).to have_content pitch_title
       expect(page).to have_content pitch_description
