@@ -1,7 +1,11 @@
 class IdeasController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
-    @ideas = @user.ideas
+    if params[:user_id]
+      @ideas = User.find(params[:user_id]).ideas
+      @user = User.find(params[:user_id])
+    else
+      @ideas = Idea.all
+    end
   end
 
   def new
