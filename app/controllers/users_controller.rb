@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params_check)
     if @user.save
-      byebug
       session[:user_id] = @user.id
       redirect_to @user
     else
