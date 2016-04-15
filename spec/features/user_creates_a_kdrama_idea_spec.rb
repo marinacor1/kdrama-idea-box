@@ -37,7 +37,6 @@ feature "user can submit kdrama idea" do
       expect(page).to have_content "The second most amazing pitch"
       expect(page).to have_content "Jude Law and Anahi fall in love under the moon."
     end
-
   end
 
   scenario "user cannot create idea without title" do

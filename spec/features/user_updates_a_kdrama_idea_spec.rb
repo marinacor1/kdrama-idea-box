@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "user can edit kdrama idea" do
   scenario "user will see the updated idea on page" do
-    new_idea = Idea.create(title: "The most amazing pitch", description: "Jude Law and Dulce Maria fall in love under the moon.")
+    new_idea = create(:idea)
 
     visit idea_path(new_idea)
 
