@@ -1,0 +1,8 @@
+<h1>Edit Your Idea</h1>
+<%= form_for @idea do |f| %>
+<%= f.label  :title%>
+<%= f.text_area :title %>
+<%= f.label  :description%>
+<%= f.text_area :description %>
+<%= f.submit %>
+<%end %>

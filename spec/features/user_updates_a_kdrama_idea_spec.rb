@@ -21,6 +21,6 @@ feature "user can edit kdrama idea" do
     click_on "Update Idea"
 
     expect(page).to have_content "The next best pitch"
-    expect(page).to have_content  "Jude Law and Dulce Maria fall in love under the moon."
-  end
+    expect(page).to have_content  "Dulce Maria dumped Jude Law for Ji Chang Wook"
+end
 end
