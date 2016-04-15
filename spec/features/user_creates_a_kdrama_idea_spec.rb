@@ -19,6 +19,7 @@ feature "user can submit kdrama idea" do
       expect(page).to have_content pitch_title
       expect(page).to have_content pitch_description
     end
+    expect(page).to have_link "All Ideas", href: ideas_path
   end
 
   scenario "user cannot create idea without title" do
