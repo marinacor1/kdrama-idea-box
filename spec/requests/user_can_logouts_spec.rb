@@ -8,7 +8,7 @@ RSpec.describe "User can logout" do
     visit login_path
     fill_in "Username", with: user.username
     fill_in "Password", with: "abcd"
-    click_button "Logout"
+    click_link "Logout"
 
     expect login_path
 
