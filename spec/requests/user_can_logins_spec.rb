@@ -7,7 +7,7 @@ RSpec.describe "user can login" do
 
     visit login_path
     fill_in "Username", with: user.username
-    fill_in "Password", with: "abcd"
+    fill_in "Password", with: "abcdefgh"
     click_button "Login"
 
     expect user_ideas_path(user)

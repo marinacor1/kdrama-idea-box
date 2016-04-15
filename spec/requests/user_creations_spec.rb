@@ -8,8 +8,8 @@ RSpec.describe "User can be created" do
       fill_in "Password", with: "password"
       fill_in "Password confirmation", with: "password"
       click_button "Create Account"
-
       expect(page).to have_content "Welcome, marina"
+
     end
 
     # it "user cannot create account if password is mismatched"

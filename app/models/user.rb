@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 8}
   validates :username, presence: true
   validates :username, uniqueness: true
-  validates :password_confirmation, presence: true
 end

@@ -6,7 +6,7 @@
 #
 #     visit login_path
 #     fill_in "Username", with: user.username
-#     fill_in "Password", with: "abcd"
+#     fill_in "Password", with: "abcdefgh"
 #     click_button "Login"
 #
 #     new_idea = create(:idea)
