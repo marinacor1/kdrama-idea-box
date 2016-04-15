@@ -6,7 +6,7 @@ feature "user can submit kdrama idea" do
     pitch_title = "Muderous Rampage Meets Love"
     pitch_description = "Lee MinHo falls in love with Anahi in the midst of a Zombie Apocalypse. Mexican and Korean love at first sight."
     visit ideas_path
-    click_on "I have a bombass idea for the latest blockbuster"
+    click_on "New Idea"
 
     expect new_idea_path
     # select category, from: "title"
@@ -24,7 +24,7 @@ feature "user can submit kdrama idea" do
   scenario "user cannot create idea without title" do
     pitch_description = "Lee MinHo falls in love with Anahi in the midst of a Zombie Apocalypse. Mexican and Korean love at first sight."
     visit ideas_path
-    click_on "I have a bombass idea for the latest blockbuster"
+    click_on "New Idea"
 
     expect new_idea_path
     # select category, from: "title"
@@ -43,7 +43,7 @@ feature "user can submit kdrama idea" do
     pitch_title = "Muderous Rampage Meets Love"
 
     visit ideas_path
-    click_on "I have a bombass idea for the latest blockbuster"
+    click_on "New Idea"
 
     expect new_idea_path
     # select category, from: "title"

@@ -15,7 +15,6 @@ feature "user can edit kdrama idea" do
     visit idea_path(new_idea)
 
     click_on "Edit Idea"
-
     fill_in "Title", with: "The next best pitch"
     fill_in "Description", with: "Dulce Maria dumped Jude Law for Ji Chang Wook"
     click_on "Update Idea"
