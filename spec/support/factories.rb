@@ -6,7 +6,7 @@ end
 
   factory :user do
     username "marina"
-    password "abcd"
-    password_confirmation "abcd"
+    password "abcdefgh"
+    password_confirmation "abcdefgh"
   end
 end
