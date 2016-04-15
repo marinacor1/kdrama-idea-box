@@ -4,4 +4,5 @@
 <p><%= @idea.description %></p>
 </li>
 <%= link_to "Edit Idea", edit_idea_path %>
-<p><%= link_to("All Ideas", ideas_path) %></p>
+<p><%= link_to "Delete Idea", idea_path(@idea), method: :delete, data: {confirm: "Really delete this idea?"} %></p>
+<p><%= link_to "All Ideas", ideas_path %></p>
