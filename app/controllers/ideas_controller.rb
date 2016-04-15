@@ -4,12 +4,14 @@ class IdeasController < ApplicationController
   end
 
   def new
-    @idea = Idea.new
+    @user = User.find(params[:user_id])
+    @idea = @user.ideas.new
   end
 
   def create
-    @idea = Idea.create(params_check)
-    if @idea.save
+    @user = User.find(params[:user_id])
+    @idea = @user.ideas.create(params_check)
+    if @idea.save #possible break here
       redirect_to @idea
     else
       render :new
@@ -18,6 +20,7 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
+    @user = @idea.user
   end
 
   def edit

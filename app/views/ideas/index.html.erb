@@ -1,8 +1,8 @@
-<h1>All the Bombass Ideas </h1>
+<h1>All Ideas </h1>
 <li>
 <% @ideas.each do |idea| %>
 <p><%= link_to idea.title, idea_path(idea)%>
 <%= idea.description %></p>
 <%end  %>
 </li>
-<%= link_to("New Idea", new_idea_path) %>
+<%= link_to("New Idea", new_user_idea_path) %>
