@@ -11,6 +11,8 @@ feature "user can edit kdrama idea" do
     fill_in "Description", with: "Dulce Maria dumped Jude Law for Ji Chang Wook"
     click_on "Update Idea"
 
+    expect idea_path(new_idea)
+
     expect(page).to have_content "The next best pitch"
     expect(page).to have_content  "Dulce Maria dumped Jude Law for Ji Chang Wook"
 end
