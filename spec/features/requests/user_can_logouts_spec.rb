@@ -4,9 +4,11 @@ RSpec.describe "User can logout" do
   include Capybara::DSL
   include FeaturesHelper
   scenario "user can see login page" do
+    user = create(:user)
+
     login_setup
 
-    expect(current_path).to eq(ideas_path)
+    expect(current_path).to eq(user_path(user))
 
     click_link "Logout"
 

@@ -4,6 +4,8 @@ RSpec.describe "user can login" do
   include Capybara::DSL
   include FeaturesHelper
   scenario "user can see user landing page" do
+    user = create(:user)
+
     login_setup
 
     expect(page).to have_content "Welcome, marina"
