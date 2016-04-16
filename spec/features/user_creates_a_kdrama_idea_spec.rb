@@ -13,15 +13,12 @@ feature "user can submit kdrama idea" do
 
     click_on "New Idea"
     expect(current_path).to eq(new_idea_path)
-
     # select category, from: "title"
     fill_in "Title", with: pitch_title
     fill_in "Description", with: pitch_description
 
     #TODO select image from box
     click_on "Submit"
-    #currently we see the user show page
-    #idea show page from within the current user
     expect(current_path).to eq(idea_path(Idea.last))
 
     within("li:first") do
@@ -32,16 +29,28 @@ feature "user can submit kdrama idea" do
   end
 
   scenario "user can view previous ideas" do
-    first_idea = Idea.create(title: "The most amazing pitch", description: "Jude Law and Dulce Maria fall in love under the moon.")
-    second_idea = Idea.create(title: "The second most amazing pitch", description: "Jude Law and Anahi fall in love under the moon.")
-
     user = create(:user)
     login_setup
 
-    click_on "All My Ideas"
+    click_on "New Idea"
+    expect(current_path).to eq(new_idea_path)
+
+    fill_in "Title", with: "The most amazing pitch"
+    fill_in "Description", with: "Jude Law and Dulce Maria fall in love under the moon."
+    click_on "Submit"
+    expect(current_path).to eq(idea_path(Idea.last))
+
+    click_on "New Idea"
+    expect(current_path).to eq(new_idea_path)
+
+    fill_in "Title", with: "The most amazing pitch"
+    fill_in "Description", with: "Jude Law and Dulce Maria fall in love under the moon."
+    click_on "Submit"
+    expect(current_path).to eq(idea_path(Idea.last))
+
+    click_on "All Ideas"
 
     expect(current_path).to eq(ideas_path)
-
     within("li:first") do
       expect(page).to have_content "The most amazing pitch"
       expect(page).to have_content "Jude Law and Dulce Maria fall in love under the moon."

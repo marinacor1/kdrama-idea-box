@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
   def index
     @ideas = current_user.ideas
     @user = current_user
+    byebug
     # if params[:user_id]
     #   @ideas = User.find(params[:user_id]).ideas
     #   @user = User.find(params[:user_id])
