@@ -10,7 +10,7 @@ RSpec.describe "User can be created" do
       click_button "Create Account"
 
       expect(current_path).to eq(user_path(User.last.id))
-      expect(page).to have_content "Welcome, marina"
+      expect(page).to have_content "Welcome, Marina"
     end
 
     it "user cannot create account if password is mismatched" do
@@ -20,7 +20,7 @@ RSpec.describe "User can be created" do
       fill_in "Password confirmation", with: "password1"
       click_button "Create Account"
 
-      expect(page).to_not have_content "Welcome, marina"
+      expect(page).to_not have_content "Welcome, Marina"
     end
 
     it "user cannot create account if username is missing" do
@@ -30,7 +30,7 @@ RSpec.describe "User can be created" do
       fill_in "Password confirmation", with: "password1"
       click_button "Create Account"
 
-      expect(page).to_not have_content "Welcome, marina"
+      expect(page).to_not have_content "Welcome, Marina"
     end
 
     it "user cannot create account if password is missing" do
@@ -40,6 +40,6 @@ RSpec.describe "User can be created" do
       fill_in "Password confirmation", with: "password1"
       click_button "Create Account"
 
-      expect(page).to_not have_content "Welcome, marina"
+      expect(page).to_not have_content "Welcome, Marina"
     end
 end
