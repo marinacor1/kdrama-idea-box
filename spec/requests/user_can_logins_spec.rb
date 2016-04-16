@@ -14,4 +14,19 @@ RSpec.describe "user can login" do
 
     expect(page).to have_content "Welcome, marina"
   end
+
+  scenario "user cannot see user landing page if password does not match" do
+    user = create(:user)
+
+    visit login_path
+    fill_in "Username", with: user.username
+    fill_in "Password", with: "abcd123"
+    click_button "Login"
+
+    expect user_ideas_path(user)
+
+    expect(page).to_not have_content "Welcome, marina"
+
+
+  end
 end
