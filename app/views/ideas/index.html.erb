@@ -1,6 +1,5 @@
 <h1>All Ideas </h1>
 <li>
-byebug
 <% @ideas.each do |idea| %>
 <p><%= link_to idea.title, idea_path(idea)%>
 <%= idea.description %></p>

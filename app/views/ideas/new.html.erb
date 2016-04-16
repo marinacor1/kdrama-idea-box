@@ -1,6 +1,5 @@
 <h1>New Idea</h1>
 <%= form_for @idea do |f| %>
-<h2><%= pluralize(@idea.errors.count, "error") %> prohibited this record from being saved:</h2>
 <ul>
   <%@idea.errors.full_messages.each do |message| %>
   <li><%= message %></li>
