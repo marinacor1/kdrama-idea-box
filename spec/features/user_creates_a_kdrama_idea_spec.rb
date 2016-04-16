@@ -43,8 +43,8 @@ feature "user can submit kdrama idea" do
     click_on "New Idea"
     expect(current_path).to eq(new_idea_path)
 
-    fill_in "Title", with: "The most amazing pitch"
-    fill_in "Description", with: "Jude Law and Dulce Maria fall in love under the moon."
+    fill_in "Title", with: "The second most amazing pitch"
+    fill_in "Description", with: "Jude Law and Anahi fall in love under the moon."
     click_on "Submit"
     expect(current_path).to eq(idea_path(Idea.last))
 
