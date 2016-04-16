@@ -11,14 +11,12 @@ class IdeasController < ApplicationController
   end
 
   def new
-    byebug
     #TODO check to see if code is right for line 16, 21,
     @user = current_user
     @idea = @user.ideas.new
   end
 
   def create
-    byebug
     @user = current_user
     @idea = @user.ideas.create(params_check)
     # if @idea.save #possible break here
