@@ -24,9 +24,18 @@ RSpec.describe "user can login" do
     click_button "Login"
 
     expect user_ideas_path(user)
-
     expect(page).to_not have_content "Welcome, marina"
+  end
 
+  scenario "user cannot see user landing page if username does not exist" do
+    user = create(:user)
 
+    visit login_path
+    fill_in "Username", with: "Michael Jackson"
+    fill_in "Password", with: "abcdefgh"
+    click_button "Login"
+
+    expect user_ideas_path(user)
+    expect(page).to_not have_content "Welcome, marina"
   end
 end

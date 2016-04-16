@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_ideas_path(@user)
     else
-      redirect_to login_path
+      redirect_to login_path #TODO flash 
     end
   end
 
