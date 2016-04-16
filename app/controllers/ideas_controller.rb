@@ -11,18 +11,22 @@ class IdeasController < ApplicationController
   end
 
   def new
+    byebug
+    #TODO check to see if code is right for line 16, 21,
     @user = current_user
     @idea = @user.ideas.new
   end
 
   def create
+    byebug
     @user = current_user
     @idea = @user.ideas.create(params_check)
-    if @idea.save #possible break here
-      redirect_to user_idea(@user)
-    else
-      render :new
-    end
+    # if @idea.save #possible break here
+    #   redirect_to user_idea(@user)
+    # else
+    #   render :new
+    # end
+    redirect_to @user
   end
 
   def show
@@ -36,11 +40,13 @@ class IdeasController < ApplicationController
 
   def update
     @idea = Idea.find(params[:id])
-    if @idea.update(params_check)
-      redirect_to @idea
-    else
-      render :edit
-    end
+    # if @idea.update(params_check)
+    #   redirect_to @idea
+    # else
+    #   render :edit
+    # end
+    @idea.update(params_check)
+    redirect_to @idea
   end
 
   def destroy

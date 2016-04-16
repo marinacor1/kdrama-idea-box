@@ -5,9 +5,10 @@ Rails.application.routes.draw do
 #user can have added attribute user_type: 0, 1 (ideally boolean)
 #admin column with true or false
 
-  resources :users do
+  resources :users
   resources :ideas
-end
+  #resources :sessions, only: [:new, :create]
+  get '/signup', to: "user#new"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
