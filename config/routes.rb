@@ -6,9 +6,8 @@ Rails.application.routes.draw do
 #admin column with true or false
 
   resources :users do
-  resources :ideas, only: [:destroy, :index, :edit, :update, :new]
+  resources :ideas
 end
-resources :ideas, only: [:index, :show]
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
