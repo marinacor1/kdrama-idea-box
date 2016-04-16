@@ -1,4 +1,5 @@
 <h1>All Ideas </h1>
+<p>Welcome, <%= @user.username %></p>
 <li>
 <% @ideas.each do |idea| %>
 <p><%= link_to idea.title, idea_path(idea)%>
@@ -6,4 +7,3 @@
 <%end  %>
 </li>
 <%= link_to("New Idea", new_idea_path(current_user)) %>
-Welcome, <%= @user.username %>

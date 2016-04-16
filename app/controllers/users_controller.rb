@@ -19,8 +19,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    render :edit
+  end
+
+  def update
+    @user = current_user
+    current_user.update
+    redirect_to user_path
+  end
+
   def show
     @user = current_user
+    
   end
 
   private
