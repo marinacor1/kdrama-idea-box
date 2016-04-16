@@ -1,3 +1,4 @@
 <h1>User show page</h1>
 <p>  Welcome, <%= current_user.username.capitalize %>!<p>
-<%= link_to("Edit Account", edit_user_path) %>
+<p><%= link_to "Edit Account", edit_user_path%></p>
+<p><%= link_to "Delete Account", user_path, method: :delete, data: {confirm: "Really delete this idea?"}  %></p>
