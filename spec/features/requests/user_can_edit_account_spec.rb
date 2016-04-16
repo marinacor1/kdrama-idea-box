@@ -12,7 +12,7 @@ feature 'User can edit an existing account' do
     fill_in "Username", with: "newuser"
 
     click_on "Update Account"
-
+    save_and_open_page
     expect(page).to have_content("Newuser")
   end
 end

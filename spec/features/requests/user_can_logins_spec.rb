@@ -8,7 +8,7 @@ RSpec.describe "user can login" do
 
     login_setup
 
-    expect(page).to have_content "Welcome, marina"
+    expect(page).to have_content "Welcome, Marina"
   end
 
   scenario "user cannot see user landing page if password does not match" do
@@ -19,7 +19,7 @@ RSpec.describe "user can login" do
     fill_in "Password", with: "abcd123"
     click_button "Login"
 
-    expect(page).to_not have_content "Welcome, marina"
+    expect(page).to_not have_content "Welcome, Marina"
   end
 
   scenario "user cannot see user landing page if username does not exist" do
@@ -30,6 +30,6 @@ RSpec.describe "user can login" do
     fill_in "Password", with: "abcdefgh"
     click_button "Login"
 
-    expect(page).to_not have_content "Welcome, marina"
+    expect(page).to_not have_content "Welcome, Marina"
   end
 end

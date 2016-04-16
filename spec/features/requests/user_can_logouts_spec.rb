@@ -13,6 +13,6 @@ RSpec.describe "User can logout" do
     click_link "Logout"
 
     expect(current_path).to eq(login_path)
-    expect(page).to_not have_content "Welcome, marina"
+    expect(page).to_not have_content "Welcome, Marina"
   end
 end
