@@ -2,3 +2,4 @@
 <p>  Welcome, <%= current_user.username.capitalize %>!<p>
 <p><%= link_to "Edit Account", edit_user_path%></p>
 <p><%= link_to "Delete Account", user_path, method: :delete, data: {confirm: "Really delete this idea?"}  %></p>
+<p><%= link_to "New Idea", new_idea_path%></p>

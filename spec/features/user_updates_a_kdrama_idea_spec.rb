@@ -11,7 +11,7 @@
 #
 #     new_idea = create(:idea)
 #
-#     visit idea_path
+#     visit idea_path(user)
 #
 #     click_on "Edit Idea"
 #     fill_in "Title", with: "The next best pitch"

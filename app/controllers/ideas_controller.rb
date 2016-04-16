@@ -26,7 +26,7 @@ class IdeasController < ApplicationController
     # else
     #   render :new
     # end
-    redirect_to @user
+    redirect_to @idea
   end
 
   def show

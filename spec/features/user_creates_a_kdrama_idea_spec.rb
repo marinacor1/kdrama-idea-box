@@ -1,35 +1,35 @@
 require 'rails_helper'
 
 feature "user can submit kdrama idea" do
-  xscenario "user will see idea, category and image on page" do
+  include FeaturesHelper
+  scenario "user will see idea, category and image on page" do
     category = 'Historical Apocolyptic Comedy'
     pitch_title = "Muderous Rampage Meets Love"
     pitch_description = "Lee MinHo falls in love with Anahi in the midst of a Zombie Apocalypse. Mexican and Korean love at first sight."
     user = create(:user)
 
-    visit login_path
-    fill_in "Username", with: user.username
-    fill_in "Password", with: "abcdefgh"
-    click_button "Login"
+    login_setup
+    expect(current_path).to eq(user_path(user))
 
-    visit ideas_path(user)
     click_on "New Idea"
+    expect(current_path).to eq(new_idea_path)
 
-    expect new_idea_path(user)
     # select category, from: "title"
     fill_in "Title", with: pitch_title
     fill_in "Description", with: pitch_description
 
     #TODO select image from box
     click_on "Submit"
-
-    expect ideas_path(user)
+    #currently we see the user show page 
+save_and_open_page
+#idea show page from within the current user
+    expect(current_path).to eq(idea_path(Idea.last))
 
     within("li:first") do
       expect(page).to have_content pitch_title
       expect(page).to have_content pitch_description
     end
-    expect(page).to have_link "All Ideas", href: user_ideas_path(user)
+    expect(page).to have_link "All Ideas", href: ideas_path
   end
 
   xscenario "user can view previous ideas" do
