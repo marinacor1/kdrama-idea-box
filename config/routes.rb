@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :ideas
-  #resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:new, :create]
   get '/signup', to: "user#new"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
