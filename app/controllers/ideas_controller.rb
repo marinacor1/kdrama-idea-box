@@ -1,6 +1,7 @@
 class IdeasController < ApplicationController
   def index
     @ideas = current_user.ideas
+    @user = current_user
     # if params[:user_id]
     #   @ideas = User.find(params[:user_id]).ideas
     #   @user = User.find(params[:user_id])
@@ -10,15 +11,15 @@ class IdeasController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @idea = @user.ideas.new
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @idea = @user.ideas.create(params_check)
     if @idea.save #possible break here
-      redirect_to @idea
+      redirect_to user_idea(@user)
     else
       render :new
     end
