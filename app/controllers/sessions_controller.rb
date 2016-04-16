@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  # before_action :require_login!, only: [:destroy]
+
   def new
   end
 
@@ -6,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to ideas_path(current_user)
+      redirect_to ideas_path
     else
       redirect_to login_path # flash
     end

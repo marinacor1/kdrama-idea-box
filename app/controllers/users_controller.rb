@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login!, except: [:new, :create]
+
   def index
    @users = User.all
   end
@@ -24,6 +26,6 @@ class UsersController < ApplicationController
   private
 
   def params_check
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end

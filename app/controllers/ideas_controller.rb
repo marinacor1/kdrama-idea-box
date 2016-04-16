@@ -1,4 +1,6 @@
 class IdeasController < ApplicationController
+  before_action :require_login!
+
   def index
     @ideas = current_user.ideas
     @user = current_user
