@@ -24,7 +24,7 @@ feature "user can submit kdrama idea" do
     click_on "Submit"
 
     expect ideas_path(user)
-s
+
     within("li:first") do
       expect(page).to have_content pitch_title
       expect(page).to have_content pitch_description

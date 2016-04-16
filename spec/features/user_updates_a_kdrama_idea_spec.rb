@@ -11,14 +11,14 @@
 #
 #     new_idea = create(:idea)
 #
-#     visit user_idea_path(new_idea)
+#     visit idea_path
 #
 #     click_on "Edit Idea"
 #     fill_in "Title", with: "The next best pitch"
 #     fill_in "Description", with: "Dulce Maria dumped Jude Law for Ji Chang Wook"
 #     click_on "Update Idea"
 #
-#     expect user_idea_path(new_idea)
+#     expect idea_path
 #
 #     expect(page).to have_content "The next best pitch"
 #     expect(page).to have_content  "Dulce Maria dumped Jude Law for Ji Chang Wook"

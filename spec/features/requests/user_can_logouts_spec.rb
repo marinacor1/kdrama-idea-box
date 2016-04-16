@@ -2,13 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "User can logout" do
   include Capybara::DSL
+  include FeaturesHelper
   scenario "user can see login page" do
-    user = create(:user)
-
-    visit login_path
-    fill_in "Username", with: user.username
-    fill_in "Password", with: "abcdefgh"
-    click_button "Login"
+    login_setup
 
     expect(current_path).to eq(ideas_path)
 
