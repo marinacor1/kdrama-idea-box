@@ -62,7 +62,7 @@ feature "user can submit kdrama idea" do
     end
   end
 
-  xscenario "user cannot create idea without title" do
+  scenario "user cannot create idea without title" do
     pitch_description = "Lee MinHo falls in love with Anahi in the midst of a Zombie Apocalypse. Mexican and Korean love at first sight."
     user = create(:user)
     login_setup
