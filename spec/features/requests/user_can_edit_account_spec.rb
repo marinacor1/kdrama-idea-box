@@ -7,14 +7,12 @@ feature 'User can edit an existing account' do
     login_setup
     click_link "Edit Account"
 
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq(edit_user_path(user))
 
     fill_in "Username", with: "newuser"
-    fill_in "Email", with: "email@email.com"
 
-    click_on "Update account"
+    click_on "Update Account"
 
     expect(page).to have_content("Newuser")
-    expect(page).to have_content("email@email.com")
   end
 end
