@@ -80,28 +80,21 @@ feature "user can submit kdrama idea" do
     expect(page).to have_content "Title can't be blank"
   end
 
-  xscenario "user cannot create idea without description" do
+  scenario "user cannot create idea without description" do
     pitch_title = "Muderous Rampage Meets Love"
     user = create(:user)
 
-    visit login_path
-    fill_in "Username", with: user.username
-    fill_in "Password", with: "abcdefgh"
-    click_button "Login"
+    login_setup
+    expect(current_path).to eq(user_path(user))
 
-    visit ideas_path(user)
     click_on "New Idea"
 
-    expect new_user_idea_path(user)
+    expect(current_path).to eq(new_idea_path)
     # select category, from: "title"
     fill_in "Title", with: pitch_title
+
     #TODO select image from box
     click_on "Submit"
-
     expect(page).to have_content "Description can't be blank"
-
-    expect new_idea_path(user)
-
-    expect(page).to_not have_content pitch_title
   end
 end
