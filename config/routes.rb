@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   #namespace an admin
 #user can have added attribute user_type: 0, 1 (ideally boolean)
 #admin column with true or false
-
+  namespace :admin do 
+    resources :categories
+  end
   resources :users, except: [:new]
   resources :ideas
   resources :sessions, only: [:new, :create, :destroy]
