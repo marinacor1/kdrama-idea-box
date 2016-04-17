@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(current_user)
     else
-      byebug
       flash.now[:notice] = "Invalid email/password combination!"
       redirect_to login_path # flash
     end

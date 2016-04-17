@@ -21,12 +21,20 @@ class IdeasController < ApplicationController
   def create
     @user = current_user
     @idea = @user.ideas.create(params_check)
-    # if @idea.save #possible break here
-    #   redirect_to user_idea(@user)
-    # else
+    # if @idea.title.nil?
+    #   flash[:notice] = "Please include title in submission."
+    #   render :new
+    # elsif @idea.description.nil?
+    #   flash[:notice] = "Please include description in submission."
     #   render :new
     # end
-    redirect_to @idea
+
+    if @idea.save #possible break here
+      redirect_to @idea
+    else
+      render :new
+    end
+    # redirect_to @idea
   end
 
   def show

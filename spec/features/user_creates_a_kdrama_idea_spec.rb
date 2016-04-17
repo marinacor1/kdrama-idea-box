@@ -77,11 +77,7 @@ feature "user can submit kdrama idea" do
 
     #TODO select image from box
     click_on "Submit"
-
     expect(page).to have_content "Title can't be blank"
-
-    expect(current_path).to eq(new_idea_path)
-    expect(page).to_not have_content pitch_description
   end
 
   xscenario "user cannot create idea without description" do
