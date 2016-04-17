@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, allow_blank: true
   validates :username, presence: true, uniqueness: true
   has_many :ideas
+
+  # enum role: %w(default admin)
 end
