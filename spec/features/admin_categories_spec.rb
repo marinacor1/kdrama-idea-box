@@ -7,11 +7,10 @@ require "rails_helper"
                         password: "password",
                         role: 1)
 
-    # ApplicationController.any_instance.stubs(:current_user).returns(admin)
-
+    ApplicationController.any_instance.stubs(:current_user).returns(admin)
     visit admin_categories_path
     save_and_open_page
-    
+
     expect(page).to have_content "All Categories"
   end
 end
