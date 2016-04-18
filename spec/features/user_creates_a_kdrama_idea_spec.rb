@@ -20,11 +20,8 @@ feature "user can submit kdrama idea" do
     #TODO select image from box
     click_on "Submit"
     expect(current_path).to eq(idea_path(Idea.last))
-
-    within("li:first") do
       expect(page).to have_content pitch_title
       expect(page).to have_content pitch_description
-    end
     expect(page).to have_link "All Ideas", href: ideas_path
   end
 
