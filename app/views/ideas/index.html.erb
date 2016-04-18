@@ -1,9 +1,18 @@
 <h1>All Ideas </h1>
 <p>Welcome, <%= current_user.username %></p>
-<li>
-<% @ideas.each do |idea| %>
-<p><%= link_to idea.title, idea_path(idea)%>
-<%= idea.description %></p>
+
+    <table>
+  <tr>
+  <th>Title</th>
+  <th>Description</th>
+</tr>
+</table>
+    <% @ideas.each do |idea| %>
+    <table>
+<tr>
+<td><%= link_to idea.title, idea_path(idea) %></td>
+<td><%= idea.description %></td>
+</tr>
+</table>
 <%end  %>
-</li>
-<%= link_to("New Idea", new_idea_path(current_user)) %>
+<p><%= link_to("New Idea", new_idea_path(current_user)) %></p>
