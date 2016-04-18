@@ -1,6 +1,6 @@
 <h1>New Admin Category</h1>
 
-<%= form_for Category.new do |f| %>
+<%= form_for (@category) do |f| %>
 <ul>
   <%@idea.errors.full_messages.each do |message| %>
   <li><%= message %></li>
