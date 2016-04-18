@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   has_many :ideas
 
-  # enum role: %w(default admin)
+  enum role: %w(default admin)
 end
