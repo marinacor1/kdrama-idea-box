@@ -48,15 +48,11 @@ feature "user can submit kdrama idea" do
     click_on "All Ideas"
 
     expect(current_path).to eq(ideas_path)
-    within("li:first") do
       expect(page).to have_content "The most amazing pitch"
       expect(page).to have_content "Jude Law and Dulce Maria fall in love under the moon."
-    end
 
-    within("li:last") do
       expect(page).to have_content "The second most amazing pitch"
       expect(page).to have_content "Jude Law and Anahi fall in love under the moon."
-    end
   end
 
   scenario "user cannot create idea without title" do
