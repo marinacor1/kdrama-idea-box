@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "default user does not see admin categories index" do
-  xit "user sees error message when trying to access" do
+  include FeaturesHelper
+  it "user sees error message when trying to access" do
     user = User.create(username: "default_user", password: "password", password_confirmation: "password", role:0)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
-
+    login_setup
     visit admin_categories_path
 
     refute page.has_content?("All Categories")
