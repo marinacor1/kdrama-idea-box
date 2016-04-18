@@ -1,2 +1,5 @@
 <h1>All Categories</h1>
 <%= link_to "Create New Category", admin_categories_path %>
+<%= @categories.each do |category| %>
+<p><%= category.genre %></p>
+<% end %>
