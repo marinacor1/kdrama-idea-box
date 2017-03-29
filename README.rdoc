@@ -1,28 +1,27 @@
-== README
+An idea box focused on organizing KDrama favorites.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To use:
 
-Things you may want to cover:
+Git clone application.
 
-* Ruby version
+Run bundle
 
-* System dependencies
+Run rake db:create
 
-* Configuration
+Run rake db:migrate
 
-* Database creation
+Run rails s
 
-* Database initialization
+Visit http://localhost:3000
 
-* How to run the test suite
+Steps to use application:
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Sign up for free/ Login if you already have an account
 
-* Deployment instructions
+2. Click on "New Idea" for a new idea
 
-* ...
+3. Click on "All Ideas" to view all ideas
 
+4. Edit your account.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+5. If you would like to cancel, delete account.
